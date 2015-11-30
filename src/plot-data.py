@@ -65,11 +65,11 @@ def advance_time(state, t):
     print("Resultant state: {0}".format(new_new_state))     
     return new_new_state 
 
-n = 100
-dt = 0.4
+n = 1000
+dt = 0.3
 positions = np.empty((n+1,2))
 
-initial_state = np.array([0.3, 0.4, 0.1, 0.09])
+initial_state = np.array([0.3, 0.4, 0.13, 0.09])
 state = initial_state
 positions[0,:] = initial_state[:2]
 
@@ -80,7 +80,7 @@ plt.show()
 for i in xrange(1,n+1):
   state = advance_time(state, dt)
   positions[i,:] = state[:2]
-  plt.plot(positions[i-1:i,0],positions[i-1:i,1])
+  plt.plot(positions[i-2:i,0],positions[i-2:i,1], color="blue")
   plt.scatter(positions[i-1:i,0],positions[i-1:i,1])
   plt.draw()
 

@@ -1,4 +1,4 @@
-project(filter)
+project(kalman_filter)
 
 find_package(catkin REQUIRED COMPONENTS
   rospy
@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_message_files(
   FILES
+  moments.msg
 )
 
 add_service_files(
